@@ -4,12 +4,15 @@
 
 ---
 
+!["Skin Cancer"](images\skcnc.jpg)
+
 ## 🚀 Project Overview
 
 Skin cancer remains one of the deadliest forms of cancer worldwide, with millions of cases diagnosed annually. Early detection is **crucial** for effective treatment and improved patient outcomes. This project aims to provide a robust, high-accuracy classifier using **deep learning techniques** to distinguish between **malignant** (cancerous) and **benign** (non-cancerous) skin lesions.
 
 Our solution leverages a combination of **Convolutional Neural Networks (CNN)** and advanced preprocessing techniques to analyze skin images and assist healthcare professionals in making timely diagnoses.
 
+!["Statistics"](images/stat.jpg)
 ---
 
 ## 📊 Key Features
@@ -17,16 +20,15 @@ Our solution leverages a combination of **Convolutional Neural Networks (CNN)** 
 - **High Accuracy Classification**: Efficiently distinguishes between malignant and benign lesions.
 - **Preprocessing with CLAHE**: Enhanced contrast for clearer feature extraction.
 - **Data Augmentation**: Increases model robustness with techniques like rotation, zoom, and flipping.
-- **User-Friendly Interface**: Designed for integration with clinical decision support systems.
 
 ---
 
 ## 🛠️ Tech Stack
 
-- **Python** 🐍
-- **TensorFlow / Keras** 🤖
-- **OpenCV** 📸
-- **VGG16 Model** 🧠
+- **Python** 
+- **TensorFlow / Keras** 
+- **OpenCV** 
+- **VGG16 Model** 
 
 ---
 
@@ -38,22 +40,38 @@ The dataset used for this project was sourced from **Kaggle** and is based on th
 - **Testing Set**: 654 images
 - **Image Size**: 224x224 pixels
 
+!["ISIC Archive"](images/isic.png)
+
+### Preprocessing Pipeline:
+- **Original Image**: The raw skin lesion image before any preprocessing steps.
+- **LAB Conversion**: The image is converted to the LAB color space to separate luminance from color information.
+- **CLAHE on L Channel**: Contrast Limited Adaptive Histogram Equalization (CLAHE) is applied to the L (luminance) channel to enhance contrast.
+- **LAB Merged Back to RGB**: The processed LAB image is converted back to the RGB color space.
+- **Pre-Processed Image**: The final enhanced image, ready for analysis or model input.
+
+!["Data Preprocessing](images/preprocessing.jpg)
+
 ### Data Augmentation Techniques:
 - **Rescaling**: Normalizes pixel values
 - **Rotation, Shear, Zoom**: Enhances variability
 - **Flipping**: Improves model generalization
 
+
+!["Data Augmentation](images/augmentation.jpg)
 ---
 
 ## ⚙️ Model Architecture
 
-Our deep learning model utilizes a **VGG16 base** for feature extraction, combined with:
+The deep learning model leverages a **VGG16 backbone** for robust feature extraction, followed by a custom classifier:
 
-- **Dense Layers**: Two dense layers with 512 neurons for complex pattern recognition
-- **Batch Normalization**: Stabilizes training and improves performance
-- **Dropout Regularization**: Reduces overfitting with a 50% dropout rate
-- **Sigmoid Activation**: Final classification layer for binary output (benign vs malignant)
+- **VGG16 Feature Extractor**: The model utilizes the pre-trained VGG16 network as a base, capturing rich, hierarchical features from the input images.
+- **Flatten Layer**: Flattens the output from the VGG16 feature maps, transforming it into a 1D vector.
+- **Fully Connected Layers**: Three dense layers with 512 neurons each, designed for high-level feature learning and complex pattern recognition.
+- **Batch Normalization**: Applied after each dense layer to standardize the activations, stabilize training, and accelerate convergence.
+- **Dropout Regularization**: Dropout layers with a 50% rate are used to prevent overfitting by randomly disabling neurons during training.
+- **Output Layer**: A single neuron with a sigmoid activation function for binary classification (benign vs. malignant).
 
+!["Architecture"](images/arch.jpg)
 ---
 
 ## 🧠 Training Process
@@ -75,12 +93,17 @@ Despite challenges like overfitting and prolonged training times, the model achi
 
 The final model demonstrates promising potential for assisting in clinical diagnostics.
 
+!["Accuracy"](images/accuracyres.png)
 ---
 
 ## 📈 Performance Visualization
 
-Our analysis includes detailed plots of **training and validation accuracy** trends, as well as loss curves over epochs, highlighting the model's learning progress.
+Our model's predictions on test images are displayed with both **true labels** and **predicted labels** for a comprehensive assessment of model performance. The green border indicates correct predictions, while the red border highlights incorrect classifications.
 
+This visual comparison helps in understanding the model’s accuracy and areas where it may need improvement.
+
+
+!["Visualistations](images/results.png)
 ---
 
 ## 💡 Future Enhancements
@@ -107,11 +130,11 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 
 For questions, suggestions, or feedback, please reach out to the project team:
 
-- Damir Tassybayev
+- Damir Tassybayev (tassybayev.kostanay@gmail.com)
+- Artur Kadyrzhanov
 - Zhansaya Orazbay
 - Dias Nursultan
-- Artur Kadyrzhanov
-- **Supervisor**: Prof. Daniele Pannone
+- **Supervisor**: Prof. Daniele Pannone (daniele.pannone@uniroma1.it)
 
 ---
 
