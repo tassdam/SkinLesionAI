@@ -4,7 +4,7 @@
 
 ---
 
-!["Skin Cancer"](images\skcnc.jpg)
+!["Skin Cancer"](images/skcnc.jpg)
 
 ## 🚀 Project Overview
 
