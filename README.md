@@ -132,7 +132,6 @@ For questions, suggestions, or feedback, please reach out to the project team:
 
 - Damir Tassybayev (tassybayev.kostanay@gmail.com)
 - Artur Kadyrzhanov (arthur.kadyrzhanov@gmail.com)
-- Zhansaya Orazbay
 - Dias Nursultan
 - **Supervisor**: Prof. Daniele Pannone (daniele.pannone@uniroma1.it)
 
