@@ -1,38 +1,44 @@
-# 🩺 Automated Skin Lesion Detection using Deep Learning
+# Automated Skin Lesion Detection using Deep Learning
 
 **An AI-Powered Solution for Early Diagnosis of Malignant and Benign Skin Lesions**
 
----
 
-!["Skin Cancer"](images/skcnc.jpg)
+## Table of Contents
 
-## 🚀 Project Overview
+- [Overview](#overview)
+- [Stack](#stack)
+- [Dataset](#dataset)
+- [Pipeline](#data-pipeline)
+- [Architecture](#model-architecture)
+- [Training Process](#training-process)
+- [Results](#results)
+- [Visualisation](#performance-visualization)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Authors](#authors)
+- [License](#license)
+- [References](#references)
+
+
+## Overview
 
 Skin cancer remains one of the deadliest forms of cancer worldwide, with millions of cases diagnosed annually. Early detection is **crucial** for effective treatment and improved patient outcomes. This project aims to provide a robust, high-accuracy classifier using **deep learning techniques** to distinguish between **malignant** (cancerous) and **benign** (non-cancerous) skin lesions.
 
 Our solution leverages a combination of **Convolutional Neural Networks (CNN)** and advanced preprocessing techniques to analyze skin images and assist healthcare professionals in making timely diagnoses.
 
 !["Statistics"](images/stat.jpg)
----
 
-## 📊 Key Features
 
-- **High Accuracy Classification**: Efficiently distinguishes between malignant and benign lesions.
-- **Preprocessing with CLAHE**: Enhanced contrast for clearer feature extraction.
-- **Data Augmentation**: Increases model robustness with techniques like rotation, zoom, and flipping.
-
----
-
-## 🛠️ Tech Stack
+## Stack
 
 - **Python** 
 - **TensorFlow / Keras** 
 - **OpenCV** 
 - **VGG16 Model** 
 
----
 
-## 🗂️ Dataset
+
+## Dataset
 
 The dataset used for this project was sourced from **Kaggle** and is based on the **ISIC Archive**. It consists of **3263 images** of skin lesions, categorized into **malignant** and **benign** classes:
 
@@ -42,7 +48,9 @@ The dataset used for this project was sourced from **Kaggle** and is based on th
 
 !["ISIC Archive"](images/isic.png)
 
-### Preprocessing Pipeline:
+## Data Pipeline
+
+### Preprocessing:
 - **Original Image**: The raw skin lesion image before any preprocessing steps.
 - **LAB Conversion**: The image is converted to the LAB color space to separate luminance from color information.
 - **CLAHE on L Channel**: Contrast Limited Adaptive Histogram Equalization (CLAHE) is applied to the L (luminance) channel to enhance contrast.
@@ -51,16 +59,16 @@ The dataset used for this project was sourced from **Kaggle** and is based on th
 
 !["Data Preprocessing](images/preprocessing.jpg)
 
-### Data Augmentation Techniques:
+### Data Augmentation:
 - **Rescaling**: Normalizes pixel values
 - **Rotation, Shear, Zoom**: Enhances variability
 - **Flipping**: Improves model generalization
 
 
 !["Data Augmentation](images/augmentation.jpg)
----
 
-## ⚙️ Model Architecture
+
+## Model Architecture
 
 The deep learning model leverages a **VGG16 backbone** for robust feature extraction, followed by a custom classifier:
 
@@ -72,18 +80,17 @@ The deep learning model leverages a **VGG16 backbone** for robust feature extrac
 - **Output Layer**: A single neuron with a sigmoid activation function for binary classification (benign vs. malignant).
 
 !["Architecture"](images/arch.jpg)
----
 
-## 🧠 Training Process
+
+## Training Process
 
 The model was trained for **100 epochs** using the **Adam optimizer** with a learning rate of 0.001. Key training strategies included:
 
 - **Early Stopping**: Prevents overfitting by monitoring validation loss
 - **Learning Rate Reduction**: Automatically reduces learning rate when validation loss plateaus
 
----
 
-## 🏆 Results
+## Results
 
 Despite challenges like overfitting and prolonged training times, the model achieved:
 
@@ -94,9 +101,8 @@ Despite challenges like overfitting and prolonged training times, the model achi
 The final model demonstrates promising potential for assisting in clinical diagnostics.
 
 !["Accuracy"](images/accuracyres.png)
----
 
-## 📈 Performance Visualization
+## Performance Visualization
 
 Our model's predictions on test images are displayed with both **true labels** and **predicted labels** for a comprehensive assessment of model performance. The green border indicates correct predictions, while the red border highlights incorrect classifications.
 
@@ -104,40 +110,52 @@ This visual comparison helps in understanding the model’s accuracy and areas w
 
 
 !["Visualistations](images/results.png)
----
 
-## 💡 Future Enhancements
 
-- Explore other CNN architectures like **ResNet**, **DenseNet**, and **InceptionNet** for improved accuracy.
-- Expand the dataset with more diverse and real-world clinical images.
-- Integrate the model into a **web-based application** for easier accessibility by healthcare professionals.
+## Installation
+**Clone the repo:**
+  ```bash
+  git clone https://github.com/tassdam/SkinLesionAI
+```
+<br>
+    
+**Install Python dependencies**
+ ```bash
+  pip install -r SkinLesionAI/requirements.txt
+```
+## Usage
+### Dataset
+  After installation, download the test data folder from
+   <a href="https://www.kaggle.com/datasets/fanconic/skin-cancer-malignant-vs-benign">Kaggle link</a>
+   <br>
+   <br>
+   After, unzip in the **data** folder with the name <strong>iam_sentences</strong>
+   <br>
+### How to run the project:
+  - You already have a pretrained model as "VGG16-model.h5" in the directory
+  - Make inference by running this command:
+``` bash
+enter command here....
+```
 
----
-
-## 🤝 Contributing
-
-We welcome contributions to enhance the model and expand its capabilities. If you have ideas for improving the project, please feel free to submit a **pull request** or **open an issue**.
-
----
-
-## 📄 License
-
-This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
-
----
-
-## 📞 Contact
-
-For questions, suggestions, or feedback, please reach out to the project team:
+## Authors
 
 - Damir Tassybayev (tassybayev.kostanay@gmail.com)
 - Artur Kadyrzhanov (arthur.kadyrzhanov@gmail.com)
 - Dias Nursultan
 - **Supervisor**: Prof. Daniele Pannone (daniele.pannone@uniroma1.it)
 
+
 ---
 
-## 🌐 References
+## License
+
+This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
+
+---
+
+
+## References
 
 - [Kaggle Skin Cancer Dataset](https://www.kaggle.com/datasets/fanconic/skin-cancer-malignant-vs-benign)
 - [ISIC Archive](https://www.isic-archive.com)
