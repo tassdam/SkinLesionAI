@@ -122,27 +122,29 @@ This visual comparison helps in understanding the model’s accuracy and areas w
 **Install Python dependencies**
  ```bash
   pip install -r SkinLesionAI/requirements.txt
+ ```
+<br>
+
+**Note**: Ensure tkinter is installed on your system. It's included with most Python installations.
+- On **Debian/Ubuntu**: 
+```bash
+  sudo apt install python3-tk
 ```
+- On **Red Hat/CentOS**: 
+```bash
+sudo yum install python3-tkinter
+```
+
 ## Usage
-### Dataset
-  After installation, download the test data folder from
-   <a href="https://www.kaggle.com/datasets/fanconic/skin-cancer-malignant-vs-benign">Kaggle link</a>
-   <br>
-   <br>
-   After, unzip in the **data** folder with the name <strong>iam_sentences</strong>
-   <br>
+  After installation, put your patient's lesion images in the **patient-images** folder
+  <br>
 ### How to run the project:
-  - You already have a pretrained model as "VGG16-model.h5" in the directory
-  - Make inference by running this command:
-``` bash
-enter command here....
-```
+  - Run `project.py` script
 
 ## Authors
 
 - Damir Tassybayev (tassybayev.kostanay@gmail.com)
 - Artur Kadyrzhanov (arthur.kadyrzhanov@gmail.com)
-- Dias Nursultan
 - **Supervisor**: Prof. Daniele Pannone (daniele.pannone@uniroma1.it)
 
 
